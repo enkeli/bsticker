@@ -58,7 +58,7 @@ class TickerFetch extends Command
                     $tick->payload = $payload;
                     $tick->volume = $payload->volume;
                     $tick->vwap = $payload->vwap;
-                    $tick->created_at = $payload->created_at;
+                    $tick->created_at = Carbon\Carbon::createFromFormat('Y-m-d*H:i:s*', $payload->created_at);
                     $tick->save();
                 }
             }
