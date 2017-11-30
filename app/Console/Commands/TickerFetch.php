@@ -55,7 +55,7 @@ class TickerFetch extends Command
                     $tick->low = $payload->low;
                     $tick->ask = $payload->ask;
                     $tick->bid = $payload->bid;
-                    $tick->payload = $payload->payload;
+                    $tick->payload = $payload;
                     $tick->volume = $payload->volume;
                     $tick->vwap = $payload->vwap;
                     $tick->created_at = $payload->created_at;

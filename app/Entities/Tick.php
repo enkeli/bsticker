@@ -21,4 +21,26 @@ class Tick extends Model
     protected $dates = [
         'created_at'
     ];
+
+    /**
+     * Set the payload.
+     *
+     * @param  string  $value
+     * @return void
+     */
+    public function setPayloadAttribute($value)
+    {
+        $this->attributes['payload'] = json_encode($value);
+    }
+
+    /**
+     * Get the payload.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getPayloadAttribute($value)
+    {
+        return json_decode($value);
+    }
 }
